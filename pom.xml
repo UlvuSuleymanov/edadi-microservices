@@ -6,7 +6,8 @@
 	<modules>
 		<module>user-service</module>
 		<module>service-registry</module>
-	</modules>
+        <module>api-gateway</module>
+    </modules>
 
 	<groupId>az.edadi</groupId>
 	<artifactId>edadi</artifactId>
