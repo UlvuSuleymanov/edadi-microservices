@@ -1,9 +1,6 @@
 server:
   port: 8083
 
-spring:
-  application:
-    name: api-gateway
 
 eureka:
   client:
@@ -14,17 +11,18 @@ eureka:
   instance:
     hostname: localhost
 
-cloud:
-  gateway:
-    routes:
-      - id: USER-SERVICE
-         uri: lb://USER-SERVICE
-         predicates:
-           - Path=/user/**
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user/**
 
-       - id: POST-SERVICE
-         uri: lb://DEPARTMENT-SERVICE
-         predicates:
-           - Path=/post/**
-        filters:
-
+        - id: POST-SERVICE
+          uri: lb://POST-SERVICE
+          predicates:
+            - Path=/post/**
